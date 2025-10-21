@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "CodeChef VIT — Mini Game",
+  title: "Tap Target — Mini Game",
   description: "Weekly Challenge: Next.js + Tailwind three-page game.",
 };
 
@@ -40,8 +40,8 @@ export default function RootLayout({
           {children}
         </main>
         <footer className="border-t border-black/[.08] dark:border-white/[.145]">
-          <div className="max-w-5xl mx-auto px-6 py-6 text-xs text-foreground/70">
-            Built with Next.js + Tailwind for CodeChef VIT Weekly Challenge
+          <div className="max-w-5xl mx-auto px-6 py-6 text-xs text-foreground/70 text-center">
+            Built with Next.js + Tailwind By Achal Tripathi
           </div>
         </footer>
       </body>
