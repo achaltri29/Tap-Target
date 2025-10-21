@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { Suspense, useEffect, useMemo, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 
 type LeaderboardEntry = { name: string; score: number; when: string };
@@ -21,7 +21,7 @@ function writeLeaderboard(entries: LeaderboardEntry[]) {
   } catch {}
 }
 
-export default function GameOverPage() {
+function GameOverInner() {
   const router = useRouter();
   const params = useSearchParams();
   const score = useMemo(() => Number(params.get("score") ?? "0"), [params]);
@@ -87,5 +87,12 @@ export default function GameOverPage() {
     </section>
   );
 }
+export default function GameOverPage() {
+  return (
+    <Suspense fallback={<div className="text-sm text-foreground/70">Loading...</div>}>
+      <GameOverInner />
+    </Suspense>
+  );
+}
 
-
+export const dynamic = "force-static";

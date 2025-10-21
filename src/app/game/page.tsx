@@ -3,8 +3,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 
-type LeaderboardEntry = { name: string; score: number; when: string };
-
 export default function GamePage() {
   const router = useRouter();
   const gameDurationSeconds = 30;
